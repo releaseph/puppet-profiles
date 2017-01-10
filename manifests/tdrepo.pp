@@ -1,7 +1,7 @@
 class profile::tdrepo {
 	
 	yumrepo {'tdrepo':
-		name     => 'CUP Custom Packages',
+		descr    => 'CUP Custom Packages',
 		baseurl  => 'http://tdrepo.aws.cambridge.org/',
 		enabled  => '1',
 		gpgcheck => '0',
