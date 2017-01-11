@@ -2,6 +2,6 @@ class profile::tng_admin {
 
     include apache
     include php
-    include mysql
+    include mysql::client
 
 }
