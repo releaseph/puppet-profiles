@@ -7,7 +7,7 @@ class profile::tng::apache {
 
     class {'::apache':
         docroot => '/mnt/data/www',
-        require => File['/mnt/data/www'],
+        require => File['/mnt/data'],
     }
 
     include ::apache::mod::php
