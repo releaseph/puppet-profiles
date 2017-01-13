@@ -1,4 +1,4 @@
-class profile::ec2tagfacts {
+class profile::base::ec2tagfacts {
 
     include ec2tagfacts
 

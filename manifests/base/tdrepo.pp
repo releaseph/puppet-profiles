@@ -1,4 +1,4 @@
-class profile::tdrepo {
+class profile::base::tdrepo {
 	
 	yumrepo {'tdrepo':
 		descr    => 'CUP Custom Packages',

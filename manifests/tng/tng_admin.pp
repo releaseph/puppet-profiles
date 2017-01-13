@@ -1,4 +1,4 @@
-class profile::tng_admin {
+class profile::tng::tng_admin {
 
     include apache
     include apache::mod::php
