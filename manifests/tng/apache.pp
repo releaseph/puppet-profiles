@@ -14,4 +14,6 @@ class profile::tng::apache {
         require => File['/mnt/data'],
     }
 
+    include ::apache::mod::php
+
 }
