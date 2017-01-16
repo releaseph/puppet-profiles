@@ -1,4 +1,4 @@
-class profile::tng::tng_admin(
+class profile::tng::admin(
     $url = undef,
 ) {
 
