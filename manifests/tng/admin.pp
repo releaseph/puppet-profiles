@@ -1,5 +1,5 @@
 class profile::tng::admin(
-    $url = undef,
+    $url = hiera('tng::admin::url'),
 ) {
 
     apache::vhost {"$url":
