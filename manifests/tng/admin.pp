@@ -14,4 +14,8 @@ class profile::tng::admin(
         }],
     }
 
+    package {'cup-admin':
+        ensure => 'present',
+    }
+
 }
