@@ -14,8 +14,12 @@ class profile::tng::go(
         }],
     }
 
-    package {'cup-tng-go':
-        ensure => 'present',
+    file {'/mnt/data/www/tng.cambridge.edu.au':
+        ensure => directory,
     }
+
+    # package {'cup-tng-go':
+    #     ensure => 'present',
+    # }
 
 }
