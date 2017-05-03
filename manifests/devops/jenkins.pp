@@ -11,7 +11,7 @@ class profile::devops::jenkins (
 	} ~>
 
 	exec { 'import-jenkins-key':
-		command     => '/bin/rpm/ --import https://jenkins-ci.org/redhat/jenkins-ci.org.key',
+		command     => '/bin/rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key',
 		refreshonly => true,
 	} ->
 
