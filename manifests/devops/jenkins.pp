@@ -1,6 +1,6 @@
 class profile::devops::jenkins (
 	$ensure = undef,
-}{
+){
 
 	include java
 	include wget
