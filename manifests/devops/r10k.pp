@@ -2,7 +2,8 @@ class profile::devops::r10k (
     $control_repo = undef,
 ){
     class { 'r10k':
-        remote => $control_repo,
+        remote   => $control_repo,
+        provider => 'gem',
     }
 
     class { 'r10k::webhook::config':
