@@ -18,4 +18,9 @@ class profile::devops::jenkins (
 	package { 'jenkins':
 		ensure => $ensure,
 	}
+
+	service { 'jenkins':
+		ensure => running,
+		enable => true,
+	}
 }
