@@ -22,5 +22,6 @@ class profile::devops::jenkins (
 	service { 'jenkins':
 		ensure => running,
 		enable => true,
+		require => Package['jenkins'],
 	}
 }
