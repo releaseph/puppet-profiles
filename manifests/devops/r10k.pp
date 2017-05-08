@@ -6,7 +6,7 @@ class profile::devops::r10k (
     }
 
     ### TODO - Ensure that the puppet-provided ruby is at least 2.2 before removing this package call
-    # The latest version of Sinatra requires Ruby 2.2, but Puppet-provided Ruby is only 2.1
+    # The latest version of Sinatra (2.0.0) requires Ruby 2.2, but Puppet-provided Ruby is only 2.1
     # System Ruby can't be used without updating the webhook (since webhook relies on puppet_gem starting puppet 4.10.0)
     package { 'sinatra':
         ensure   => '1.4.8',
