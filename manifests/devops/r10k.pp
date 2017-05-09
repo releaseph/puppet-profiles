@@ -1,3 +1,6 @@
+### Class profile::devops::r10k
+# Installs and configures r10k
+
 class profile::devops::r10k (
     $control_repo = undef,
 ){

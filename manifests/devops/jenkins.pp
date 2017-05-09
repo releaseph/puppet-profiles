@@ -1,27 +1,30 @@
+### Class profile::devops::jenkins
+# Installs Jenkins CI server
+
 class profile::devops::jenkins (
-	$ensure = undef,
+    $ensure = undef,
 ){
 
-	include java
-	include wget
+    include java
+    include wget
 
-	wget::fetch { 'jenkins-repo':
-		source => 'http://pkg.jenkins-ci.org/redhat/jenkins.repo',
-		destination => '/etc/yum.repos.d/jenkins.repo',
-	} ~>
+    wget::fetch { 'jenkins-repo':
+        source      => 'http://pkg.jenkins-ci.org/redhat/jenkins.repo',
+        destination => '/etc/yum.repos.d/jenkins.repo',
+    } ~>
 
-	exec { 'import-jenkins-key':
-		command     => '/bin/rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key',
-		refreshonly => true,
-	} ->
+    exec { 'import-jenkins-key':
+        command     => '/bin/rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key',
+        refreshonly => true,
+    } ->
 
-	package { 'jenkins':
-		ensure => $ensure,
-	}
+    package { 'jenkins':
+        ensure => $ensure,
+    }
 
-	service { 'jenkins':
-		ensure => running,
-		enable => true,
-		require => Package['jenkins'],
-	}
+    service { 'jenkins':
+        ensure  => running,
+        enable  => true,
+        require => Package['jenkins'],
+    }
 }

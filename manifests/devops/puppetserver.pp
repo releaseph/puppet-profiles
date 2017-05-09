@@ -1,3 +1,6 @@
+### Class profile::devops::puppetserver
+# Installs and configures puppetserver
+
 class profile::devops::puppetserver (
     $xms         = undef,
     $xmx         = undef,
