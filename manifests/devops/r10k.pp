@@ -14,10 +14,10 @@ class profile::devops::r10k (
     package { 'sinatra':
         ensure   => '1.4.8',
         provider => 'puppet_gem',
-    } ->
+    }
     ### End of TODO
 
-    class { 'r10k::webhook::config':
+    -> class { 'r10k::webhook::config':
         use_mcollective => false,
         enable_ssl      => false,
     }

@@ -6,10 +6,10 @@ class profile::devops::puppetserver (
     $xmx         = undef,
     $maxpermsize = undef,
 ){
-    class { 'puppetserver::repository': 
-    } ->
+    class { 'puppetserver::repository':
+    }
 
-    class { 'puppetserver':
+    -> class { 'puppetserver':
         config => {
             'java_args' => {
                 'xms'         => $xms,
