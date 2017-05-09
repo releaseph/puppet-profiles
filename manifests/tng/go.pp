@@ -1,8 +1,11 @@
+### Class profile::tnd::admin
+# Setup TNG Go application
+
 class profile::tng::go(
     $url = hiera('tng::go::url'),
 ) {
 
-    apache::vhost {"$url":
+    apache::vhost {$url:
         port        => '80',
         docroot     => '/mnt/data/www/tng.cambridge.edu.au',
         directories => [{

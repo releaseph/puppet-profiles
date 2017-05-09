@@ -1,8 +1,11 @@
+### Class profile::tnd::admin
+# Setup TNG Admin application
+
 class profile::tng::admin(
     $url = hiera('tng::admin::url'),
 ) {
 
-    apache::vhost {"$url":
+    apache::vhost {$url:
         port        => '80',
         docroot     => '/mnt/data/www/admin.cambridge.edu.au',
         directories => [{

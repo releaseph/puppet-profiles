@@ -1,3 +1,6 @@
+### Class profile::tng::apache
+# Setup Apache for use with TNG applications
+
 class profile::tng::apache {
 
     file {'/mnt/data':
