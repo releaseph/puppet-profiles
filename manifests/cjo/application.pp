@@ -2,12 +2,20 @@
 # Setup CJO application
 
 class profile::cjo::application {
-	
-	puppet_config::config_file { 'SystemApplicationProperties':
-		filename  => 'SystemApplicationProperties.properties',
-		directory => '/app/jboss-5.1.0GA/conf',
-		owner     => 'cjo',
-		group     => 'cjogroup',
-	}
+
+    group { 'cjogroup':
+        ensure => present,
+    }
+
+    -> user { 'cjo':
+        ensure => present,
+        groups => [ 'cjogroup' ],
+    }
+
+    file { '/app/jboss-5.1.0GA/conf/SystemApplicationProperties.properties':
+        ensure => file,
+        group  => 'cjogroup',
+        owner  => 'cjo',
+    }
 
 }
