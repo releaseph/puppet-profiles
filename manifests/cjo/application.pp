@@ -12,10 +12,16 @@ class profile::cjo::application {
         groups => [ 'cjogroup' ],
     }
 
-    file { '/app/jboss-5.1.0GA/conf/SystemApplicationProperties.properties':
+    file { '/app/jboss-5.1.0.GA/conf/SystemApplicationResources.properties':
         ensure => file,
         group  => 'cjogroup',
         owner  => 'cjo',
+    }
+
+    puppet_conf::java_property {'uhy_bib_supplementery_id':
+        file  => '/app/jboss-5.1.0.GA/conf/SystemApplicationResources.properties',
+        key   => 'uhy_bib_supplementary_id',
+        value => '1821164',
     }
 
 }
