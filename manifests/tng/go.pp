@@ -4,6 +4,8 @@
 class profile::tng::go(
     $url = hiera('tng::go::url'),
 ) {
+    include ::profile::tng::apache
+    include ::profile::base::tdrepo
 
     apache::vhost {$url:
         port        => '80',
